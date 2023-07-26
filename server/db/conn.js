@@ -8,12 +8,11 @@ const connectDB = async () => {
   try {
     mongoose.set('strictQuery', true);
     await mongoose.connect(Db, {
+      dbName: "sample_mflix",
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      ssl: true,
-      sslKey: `${credentials}`,
-      sslCert: `${credentials}`,
-      
+      tlsAllowInvalidCertificates: true,
+      tlsCertificateKeyFile: credentials
     });
 
     console.log('MongoDB is Connected...');
@@ -23,4 +22,23 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB;
+// Schema for users of app
+const UserSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    date: {
+        type: Date,
+        default: Date.now,
+    },
+});
+const User = mongoose.model('users', UserSchema);
+User.createIndexes();
+
+module.exports = {connectDB,User};

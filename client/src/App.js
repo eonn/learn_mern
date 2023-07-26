@@ -1,23 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-class App extends Component {
-constructor(props) {
-    super(props);
-    this.state = {
-      posts: []
-    }
-  }
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>Hello Mate!!!</p>
-        </header>
-      </div>
-    );
-  }
+import { Route, Routes } from 'react-router-dom'
+
+// We will create these two pages in a moment
+
+import HomePage from './pages/HomePage';
+import UserPage from './pages/UserPage';
+import RegisterUser from './pages/RegisterUser';
+
+export default function App() {
+
+return (
+	<Routes>
+		<Route exact path="/" element={ <HomePage/> } />
+		<Route path="/:id" element={ <UserPage/> } />
+		<Route path="/Register" element={ <RegisterUser/> } />
+	</Routes>
+)
 }
-export default App;
