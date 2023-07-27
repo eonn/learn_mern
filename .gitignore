@@ -21,3 +21,14 @@ yarn-debug.log*
 yarn-error.log*
 
 config.env
+
+#visual Code
+.vs
+/.vs
+/.vs/*
+.vs/*
+
+package-lock.json
+*/package-lock.json
+
+
