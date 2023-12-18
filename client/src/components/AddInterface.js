@@ -8,18 +8,18 @@ const AddInterface = () => {
     description: "",
     published: false
   };
-  const [interface, setInterface] = useState(initialInterfaceState);
+  const [Interface, setInterface] = useState(initialInterfaceState);
   const [submitted, setSubmitted] = useState(false);
 
   const handleInputChange = event => {
     const { name, value } = event.target;
-    setInterface({ ...interface, [name]: value });
+    setInterface({ ...Interface, [name]: value });
   };
 
   const saveInterface = () => {
     var data = {
-      title: interface.title,
-      description: interface.description
+      title: Interface.title,
+      description: Interface.description
     };
 
     InterfaceDataService.create(data)
@@ -61,7 +61,7 @@ const AddInterface = () => {
               className="form-control"
               id="title"
               required
-              value={interface.title}
+              value={Interface.title}
               onChange={handleInputChange}
               name="title"
             />
@@ -74,7 +74,7 @@ const AddInterface = () => {
               className="form-control"
               id="description"
               required
-              value={interface.description}
+              value={Interface.description}
               onChange={handleInputChange}
               name="description"
             />

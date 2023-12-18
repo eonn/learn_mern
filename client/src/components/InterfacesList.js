@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
-import InterfaceDataService from "../services/InterfaceService";
+import InterfaceDataService from "../services/InterfaceServices";
 import { useTable } from "react-table";
 
 const InterfacesList = (props) => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import InterfaceDataService from "../services/InterfaceService";
+import InterfaceDataService from "../services/InterfaceServices";
 
 const Interface = props => {
   const initialInterfaceState = {

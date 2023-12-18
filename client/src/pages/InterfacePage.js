@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
-...
 
 import AddInterface from "./../components/AddInterface";
 import Interface from "./../components/Interface";
